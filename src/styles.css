@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Manrope:wght@400;500;600;700&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@theme {
+  --font-display: "Fraunces", ui-serif, Georgia, "Times New Roman", serif;
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+
+  --color-bg: #f3eee4;
+  --color-paper: #e8dfd0;
+  --color-surface: #faf7f1;
+  --color-ink: #1a261c;
+  --color-muted: #6e7a6f;
+  --color-forest: #2f4a38;
+  --color-forest-deep: #24382c;
+  --color-terracotta: #c15f3c;
+  --color-terracotta-deep: #a34c2e;
+  --color-border: #ddd4c4;
+
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.25rem;
+
+  --shadow-border:
+    0px 0px 0px 1px rgba(26, 38, 28, 0.06), 0px 1px 2px -1px rgba(26, 38, 28, 0.06),
+    0px 2px 4px 0px rgba(26, 38, 28, 0.04);
+  --shadow-border-hover:
+    0px 0px 0px 1px rgba(26, 38, 28, 0.08), 0px 1px 2px -1px rgba(26, 38, 28, 0.08),
+    0px 2px 4px 0px rgba(26, 38, 28, 0.06);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body,
+  #app {
+    min-height: 100%;
+  }
+
+  body {
+    background: var(--color-bg);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    line-height: 1.55;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-display);
+    line-height: 1.15;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  input,
+  textarea,
+  select {
+    font-family: inherit;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
