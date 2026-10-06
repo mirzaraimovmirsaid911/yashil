@@ -26,12 +26,8 @@ jobs:
       - run: npm ci --no-audit --no-fund
       - name: Build
         run: |
-          REPO="${GITHUB_REPOSITORY#*/}"
-          case "$REPO" in
-            *.github.io) export BASE_PATH="/" ;;
-            *) export BASE_PATH="/$REPO/" ;;
-          esac
-          npm run build:pages
+            export BASE_PATH="/"
+         npm run build:pages
         env:
           VITE_AUTH_ENABLED: "false"
           VITE_STATIC_SITE: "true"
