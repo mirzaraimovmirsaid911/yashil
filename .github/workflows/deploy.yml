@@ -26,8 +26,8 @@ jobs:
       - run: npm ci --no-audit --no-fund
       - name: Build
         run: |
-            export BASE_PATH="/"
-         npm run build:pages
+            export BASE_PATH="/"  
+            npm run build:pages
         env:
           VITE_AUTH_ENABLED: "false"
           VITE_STATIC_SITE: "true"
